@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+*.lic
+
+# Local experiment dumps (not paper artifacts).
+qkp_benchmark_out/
+runs/
+.mplconfig/
+.mplconfig_job/
+.recover/
+job_out.txt
+
+# Keep only paper figures / data under results/; ignore everything else there.
+results/*
+!results/ENV_VERSIONS.txt
+!results/SOURCE_SHA256.txt
+!results/gap_improvement_sweep_scip_n400_s40_k100.json
+!results/gap_improvement_sweep_scip_n400_s40_k100.png
+!results/traj_tsne.png
+!results/obj_vs_time_seed102.png
+!results/obj_vs_time_seed102.json
+!results/cont_relax_scip_n400_k50_seed102.json

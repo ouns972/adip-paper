@@ -1,0 +1,9 @@
+# Suggested dependency pins for reproducing paper figures.
+#
+#   python>=3.10,<3.13
+#   numpy>=1.21,<2
+#   torch  (CPU or CUDA build as used for the runs)
+#   matplotlib>=3.9
+#   scikit-learn>=1.6
+#   tqdm>=4.67
+#   pyscipopt>=6.0   # requires a SCIP installation
