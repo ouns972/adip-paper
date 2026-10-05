@@ -9,9 +9,10 @@
 
 Ouns El Harzli · Yudong Cao
 
-Official code for reproducing the QKP experiments in:
-
-> We introduce an autoregressive differentiable method to solve 0-1 integer programs. We fix an arbitrary order of the binary variables and we train a transformer to predict the next bit while remaining in the feasible set. Our method is first trained on feasible incumbents provided by any solver, thus allowing us to initialize the transformer in the feasible set. Our procedure then implements a Lagrangian penalty to penalize infeasible solutions, and the transformer is further trained to explore the feasible set using Gumbel-softmax activations on the relaxed objective.
+Official code for the paper
+[*Autoregressive Differentiable Method for Integer Programming*](https://arxiv.org/abs/2610.02528)
+([arXiv:2610.02528](https://arxiv.org/abs/2610.02528)).
+This repository reproduces the Quadratic Knapsack Problem (QKP) experiments.
 
 ADIP has three stages:
 
