@@ -1,14 +1,23 @@
-# ADIP — Autoregressive Differentiable Method for Integer Programming
+# Autoregressive Differentiable Method for Integer Programming (ADIP)
 
-Code and reproduction scripts for the paper
-*Autoregressive Differentiable Method for Integer Programming*,
-accompanying the arXiv release.
+[![arXiv](https://img.shields.io/badge/arXiv-2610.02528-b31b1b.svg)](https://arxiv.org/abs/2610.02528)
+[![PDF](https://img.shields.io/badge/PDF-arXiv-red.svg)](https://arxiv.org/pdf/2610.02528)
+[![cs.LG](https://img.shields.io/badge/cs.LG-blue.svg)](https://arxiv.org/abs/2610.02528)
+[![math.OC](https://img.shields.io/badge/math.OC-blue.svg)](https://arxiv.org/abs/2610.02528)
 
-ADIP solves the Quadratic Knapsack Problem (QKP) with a three-stage pipeline:
+**[Paper](https://arxiv.org/abs/2610.02528)** · **[PDF](https://arxiv.org/pdf/2610.02528)**
 
-1. **MIP warm-start** — obtain a feasible incumbent from SCIP or an open-source MIP/CP solver  
-2. **Teacher-forcing CE** — fit an autoregressive bit model to that incumbent  
-3. **Differentiable phase-2** — refine with a Gumbel–Softmax / STE relaxation and a knapsack Lagrangian  
+Ouns El Harzli · Yudong Cao
+
+Official code for reproducing the QKP experiments in:
+
+> We introduce an autoregressive differentiable method to solve 0-1 integer programs. We fix an arbitrary order of the binary variables and we train a transformer to predict the next bit while remaining in the feasible set. Our method is first trained on feasible incumbents provided by any solver, thus allowing us to initialize the transformer in the feasible set. Our procedure then implements a Lagrangian penalty to penalize infeasible solutions, and the transformer is further trained to explore the feasible set using Gumbel-softmax activations on the relaxed objective.
+
+ADIP has three stages:
+
+1. **MIP warm-start** — a feasible incumbent from SCIP or another MIP/CP solver
+2. **Teacher-forcing CE** — an autoregressive bit model fitted to that incumbent
+3. **Differentiable phase-2** — Gumbel–Softmax / STE refinement with a knapsack Lagrangian
 
 The reported ADIP solution is the rounded soft \(\tilde x\) at the best phase-2 loss.
 
@@ -121,4 +130,16 @@ scripts/repro_obj_time.sh --full
 
 ## Citation
 
-If you use this code, please cite the accompanying paper (arXiv link to be added upon release).
+If you use this code or the method, please cite:
+
+```bibtex
+@misc{elharzli2026autoregressive,
+  title         = {Autoregressive Differentiable Method for Integer Programming},
+  author        = {El Harzli, Ouns and Cao, Yudong},
+  year          = {2026},
+  eprint        = {2610.02528},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2610.02528}
+}
+```
